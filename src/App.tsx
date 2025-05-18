@@ -1,10 +1,10 @@
 import './App.css'
-import CommentForm from './components/Form/CommentForm'
+import Home from './pages/Home'
 
 function App() {
   return (
     <>
-      <CommentForm />
+     <Home />
     </>
   )
 }

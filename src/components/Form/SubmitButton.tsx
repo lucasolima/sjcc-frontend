@@ -1,11 +1,10 @@
 function SubmitButton() {
     return (
-      <div>
         <input
           type="submit"
           value="Enviar"
           className="
-            w-full
+            w-[55%]
             bg-red-600
             text-white
             font-medium
@@ -28,7 +27,6 @@ function SubmitButton() {
             cursor-pointer
           "
         />
-      </div>
     );
   }
   

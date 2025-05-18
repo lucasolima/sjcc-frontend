@@ -1,4 +1,5 @@
 import { FaUser } from 'react-icons/fa'
+
 function NameInput() {
   return (
     <div className="relative w-full max-w-md">
@@ -7,6 +8,7 @@ function NameInput() {
         id="name-input"
         type="text"
         placeholder="Digite seu nome"
+        required
         className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm
                    focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
       />
