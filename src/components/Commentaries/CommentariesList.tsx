@@ -27,7 +27,8 @@ function CommentList() {
   return (
     <div className="space-y-4">
       {comments.map((comment) => (
-        <Commentary name={comment.name} content={comment.status == "approved" ? comment.content : 'Comentário Removido'}/>
+        <Commentary name={comment.name} createdAt={new Date(comment.createdAt ?? "").toLocaleDateString("pt-br")} content={comment.status == "approved" ? comment.content : 'Comentário Removido'}/>
+        
       ))}
     </div>
   );
