@@ -23,7 +23,7 @@ function CommentList() {
   }, []);
 
   if (loading) return <p className="text-center text-gray-500">Carregando comentários...</p>;
-
+  console.log(comments)
   return (
     <div className="space-y-4">
       {comments.map((comment) => (
