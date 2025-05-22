@@ -1,11 +1,18 @@
 import { FaRegCommentDots } from 'react-icons/fa' 
 
-function CommentTextarea() {
+type TextAreaInputProps = {
+  value:string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+}
+
+function CommentTextarea({value, onChange}: TextAreaInputProps) {
   return (
     <div className="relative w-full max-w-md">
       <FaRegCommentDots className="absolute left-3 top-3 text-gray-400 pointer-events-none" />
       <textarea
         id="text-area"
+        value={value}
+        onChange={onChange}
         placeholder="Faça seu comentário"
         required
         rows={4}

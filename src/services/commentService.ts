@@ -9,3 +9,8 @@ export const getAllComments = async (): Promise<Comment[]> => {
 export const sendComment = async (data: Comment): Promise<void> => {
   await api.post("/comments", data);
 };
+
+export async function postComment(comment: Omit<Comment, "id" | "createdAt" | "status">){
+  const response = await api.post("/comments", comment);
+  return response.data;
+}
