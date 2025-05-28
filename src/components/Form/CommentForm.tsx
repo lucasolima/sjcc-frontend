@@ -12,19 +12,29 @@ function CommentForm() {
   const [content, setContent] = useState("");
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
+async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault();
 
-    try {
-      await postComment({ name, content });
-      setStatusMessage({ type: "success", text: "Comentário enviado com sucesso!" });
-      setName("");
-      setContent("");
-    } catch (e) {
-      setStatusMessage({ type: "error", text: "Erro ao enviar o comentário." });
-      console.error(e);
-    }
+  if (name.trim() === "") {
+    setStatusMessage({ type: "error", text: "O campo nome deve ser preenchido." });
+    return;
   }
+
+  if (content.trim() === "") {
+    setStatusMessage({ type: "error", text: "O campo comentário deve ser preenchido." });
+    return;
+  }
+
+  try {
+    await postComment({ name, content });
+    setStatusMessage({ type: "success", text: "Comentário enviado com sucesso!" });
+    setName("");
+    setContent("");
+  } catch (e) {
+    setStatusMessage({ type: "error", text: "Erro ao enviar o comentário." });
+    console.error(e);
+  }
+}
 
   return (
     <div className="w-full h-full flex items-center justify-center bg-gray-100 px-4">
@@ -50,7 +60,6 @@ function CommentForm() {
             maxLength={150}
           />
         <CharacterCounter currentLength={content.length} maxLength={150} />
-
         </div>
 
         <div className="flex flex-col items-center gap-2">

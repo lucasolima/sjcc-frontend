@@ -15,7 +15,6 @@ function NameInput({value, onChange}:NameInputProps) {
         value={value}
         onChange={onChange}
         placeholder="Digite seu nome"
-        required
         className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm
                    focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
       />

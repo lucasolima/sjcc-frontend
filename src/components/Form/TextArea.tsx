@@ -16,7 +16,6 @@ function CommentTextarea({value, onChange, maxLength}: TextAreaInputProps) {
         onChange={onChange}
         maxLength={maxLength}
         placeholder="Faça seu comentário"
-        required
         rows={4}
         className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm
                    focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 resize-none"
