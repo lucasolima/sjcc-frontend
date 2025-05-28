@@ -3,7 +3,11 @@ import Commentary from "../Commentaries/Commentary";
 import { getAllComments } from "../../services/commentService";
 import type { Comment } from "../../types/Comment";
 
-function CommentList() {
+type CommentListProps = {
+  refreshTrigger: boolean;
+};
+
+function CommentList({refreshTrigger}:CommentListProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +24,7 @@ function CommentList() {
     }
 
     fetchComments();
-  }, []);
+  }, [refreshTrigger]);
 
   if (loading) return <p className="text-center text-gray-500">Carregando comentários...</p>;
   console.log(comments)

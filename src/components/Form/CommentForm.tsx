@@ -7,7 +7,11 @@ import SubmitButton from './SubmitButton';
 import FormTitle from './FormTitle';
 import CharacterCounter from './CharacterCounter';
 
-function CommentForm() {
+type CommentFormProps = {
+  onCommentPosted: () => void;
+}
+
+function CommentForm({onCommentPosted}:CommentFormProps) {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
@@ -30,6 +34,7 @@ async function handleSubmit(e: React.FormEvent) {
     setStatusMessage({ type: "success", text: "Comentário enviado com sucesso!" });
     setName("");
     setContent("");
+    onCommentPosted();
   } catch (e) {
     setStatusMessage({ type: "error", text: "Erro ao enviar o comentário." });
     console.error(e);
