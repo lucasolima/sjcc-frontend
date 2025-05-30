@@ -31,10 +31,14 @@ function CommentList({refreshTrigger}:CommentListProps) {
   return (
     <div className="space-y-4">
       {comments
+        .filter(comment => comment.status === "approved")
         .slice()
         .reverse()
         .map((comment) => (
-        <Commentary name={comment.name} createdAt={new Date(comment.createdAt ?? "").toLocaleDateString("pt-br")} content={comment.status == "approved" ? comment.content : 'Comentário Removido'}/>
+        <Commentary 
+          name={comment.name} 
+          createdAt={new Date(comment.createdAt ?? "").toLocaleDateString("pt-br")} 
+          content={comment.content}/>
       ))}
     </div>
   );
