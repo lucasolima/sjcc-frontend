@@ -20,11 +20,17 @@ export function useCommentForm(onCommentPosted: () => void) {
     }
 
     try {
-      await postComment({ name, content });
-      setStatusMessage({ type: "success", text: "Comentário enviado com sucesso!" });
-      setName("");
-      setContent("");
-      onCommentPosted();
+      const response = await postComment({ name, content });
+      if (response.status === "rejected"){
+        setStatusMessage({type: "error", text: "Desculpe, seu comentário infringiu as normas de boa conduta"})
+        setName("")
+        setContent("")
+      } else {
+        setStatusMessage({ type: "success", text: "Comentário enviado com sucesso!" });
+        setName("");
+        setContent("");
+        onCommentPosted();
+      }
     } catch (e) {
       setStatusMessage({ type: "error", text: "Erro ao enviar o comentário." });
       console.error(e);
