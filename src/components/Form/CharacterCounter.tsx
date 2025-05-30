@@ -1,7 +1,4 @@
-type CharacterCounterProps = {
-    currentLength: number;
-    maxLength: number;
-  };
+import type { CharacterCounterProps } from "../../types/CharacterCounterProps";
   
   function CharacterCounter({ currentLength, maxLength }: CharacterCounterProps) {
     return (

@@ -1,5 +1,5 @@
 import api from "./apiService";
-import type { Comment } from "../types/Comment";
+import type { Comment } from "../types/CommentaryProps";
 
 export const getAllComments = async (): Promise<Comment[]> => {
   const response = await api.get("/comments");

@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import Commentary from "../Commentaries/Commentary";
 import { getAllComments } from "../../services/commentService";
-import type { Comment } from "../../types/Comment";
-
-type CommentListProps = {
-  refreshTrigger: boolean;
-};
+import type { CommentProps } from "../../types/CommentaryProps";
+import type { CommentListProps } from "../../types/CommentListProps";
 
 function CommentList({refreshTrigger}:CommentListProps) {
-  const [comments, setComments] = useState<Comment[]>([]);
+  const [comments, setComments] = useState<CommentProps[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

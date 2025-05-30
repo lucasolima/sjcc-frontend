@@ -1,8 +1,8 @@
 import { FaUser } from "react-icons/fa";
-import type { Comment } from "../../types/Comment"
+import type { CommentProps } from "../../types/CommentaryProps"
 
 
-function Commentary({ name, content, createdAt }: Comment) {
+function Commentary({ name, content, createdAt }: CommentProps) {
   return (
     <div className="flex items-start gap-4 bg-white rounded-xl shadow-md p-4 border border-gray-200">
       <div className="flex-shrink-0 bg-red-100 p-2 rounded-full">

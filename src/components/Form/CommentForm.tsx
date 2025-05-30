@@ -6,10 +6,7 @@ import TextArea from './TextArea';
 import SubmitButton from './SubmitButton';
 import FormTitle from './FormTitle';
 import CharacterCounter from './CharacterCounter';
-
-type CommentFormProps = {
-  onCommentPosted: () => void;
-}
+import type { CommentFormProps } from '../../types/CommentFormProps';
 
 function CommentForm({onCommentPosted}:CommentFormProps) {
   const [name, setName] = useState("");

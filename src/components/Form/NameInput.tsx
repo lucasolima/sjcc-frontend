@@ -1,9 +1,5 @@
-import { FaUser } from 'react-icons/fa'
-
-type NameInputProps = {
-  value:string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import type { NameInputProps } from '../../types/NameInputProps';
+import { FaUser } from 'react-icons/fa';
 
 function NameInput({value, onChange}:NameInputProps) {
   return (
@@ -22,4 +18,4 @@ function NameInput({value, onChange}:NameInputProps) {
   )
 }
 
-export default NameInput
+export default NameInput;

@@ -1,10 +1,5 @@
+import type { TextAreaInputProps } from '../../types/TextAreaInputProps'
 import { FaRegCommentDots } from 'react-icons/fa' 
-
-type TextAreaInputProps = {
-  value:string;
-  maxLength: number;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-}
 
 function CommentTextarea({value, onChange, maxLength}: TextAreaInputProps) {
   return (

@@ -1,8 +1,5 @@
-interface LabelProps {
-    htmlFor: string
-    children: React.ReactNode
-  }
-  
+import type { LabelProps } from "../../types/LabelProps"
+
   function Label({ htmlFor, children }: LabelProps) {
     return (
       <label
